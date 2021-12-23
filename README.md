@@ -1,2 +1,2 @@
 # qc-redux-context
-redux ，aixos and proxy，redux-thunk，context
+redux ，axios and proxy，redux-thunk，context
