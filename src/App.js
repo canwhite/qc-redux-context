@@ -1,4 +1,9 @@
+/* @jsxImportSource @emotion/react */
 import './App.css';
+import styled from "@emotion/styled"
+import { css} from '@emotion/react'
+import Row from "./Row" 
+
 //=====PS1:redux====
 //然后就是通过reducer拿到state，以及怎么使用dispatch了
 //从provider到useSelector到useDispatch,这些方法我们都从react-redux中拿
@@ -20,6 +25,25 @@ import {
   ToggleProvider,
   ToggleConsumer
 } from "./context/ToggleContext"
+
+
+//和emotion配套使用,外置参数
+const color = 'red'
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:${color};
+  & span {
+    font-size:20px;
+    font-weight:600;
+  }
+`;
+
+
+//通用组件，起个别名
+const HeaderLeft = styled(Row)``;
 
 
 
@@ -83,6 +107,27 @@ function App() {
       }}>发起请求</button></p>
       <p>{thunk}</p>
 
+
+      {/* emotion */}
+      <Container>
+        <span>emotion组件</span>
+      </Container>
+
+      <div css={css`
+        color:red,
+        margin-top:15px;
+        background:green;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:80px;
+        margin-top:15px;
+      `}> emotion行内样式</div>
+
+
+      <HeaderLeft gap={1}> 
+        emotion通用组件
+      </HeaderLeft>
 
 
 
