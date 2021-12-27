@@ -56,6 +56,7 @@ const Container = styled.div`
 2.=====给已存在组件加样式，类似HOC=====
 
 // Card 是antd已存在的组件
+// HOC接收一个组件作为参数
 const ShadowCard = styled(Card)`
     width: 40rem;
     min-height: 56rem;
@@ -68,9 +69,17 @@ const ShadowCard = styled(Card)`
 
 
 3.=====使用css行内样式=====
-//在顶部加上这个
+
+//(1)在页面顶部加这一行
 /* @jsxImportSource @emotion/react */
+
+//(2)引入css
 import { css} from '@emotion/react'
+
+//(3)单括号里有乾坤，
+css={css`
+
+`}
 
 <div css={css`
     color:red,
@@ -89,7 +98,7 @@ import { css} from '@emotion/react'
 // 定义Row组件
 import styled from "@emotion/styled"
 
-//从props取值
+// ${}从props取值
 export default styled('div')`
     display: block;
     box-sizing: border-box;
@@ -113,10 +122,8 @@ export default styled('div')`
 `
 
 // 调用Row组件
-
 import Row from "./Row" 
 const HeaderLeft = styled(Row)``; //起个新名字
-
 
 <HeaderLeft gap={1}> 
     //html代码
