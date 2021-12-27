@@ -26,12 +26,13 @@ yarn start
 ## ps ：css-in-js之emotion的使用
 
 ```
-install:
+
+pre: install:
 
 yarn add @emotion/react
 yarn add @emotion/styled
 
-1.======一般使用（Css组件）======
+1.一般使用（Css组件）
 import styled from "@emotion/styled"
 .................
 
@@ -56,7 +57,7 @@ const Container = styled.div`
 
 
 
-2.=====给已存在组件加样式，类似HOC=====
+2.给已存在组件加样式，类似HOC
 
 // Card 是antd已存在的组件
 // HOC接收一个组件作为参数
@@ -75,7 +76,7 @@ const ShadowCard = styled(Card)`
 
 
 
-3.=====使用css行内样式=====
+3.使用css行内样式
 
 //(1)在页面顶部加这一行
 /* @jsxImportSource @emotion/react */
@@ -104,7 +105,7 @@ css={css`
 
 
 
-4.=====提出公共的css组件=====
+4.提出公共的css组件
 
 // 定义Row组件
 import styled from "@emotion/styled"
