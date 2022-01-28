@@ -1,15 +1,13 @@
 //拿到Context hook，
 import React,{createContext} from "react";
-//1.使用createContext创建上下文
-//state 和方法只是一个“骨架”，
-//后面的 Provider 会覆盖
+//1.创建context，实际上初始值可以不给，方便后续挂载
+//context也可以独立到另外一个文件夹，方便后期引入
 const ToggleContext = createContext({
     toggle:true,
     handleToggle:()=>{}
 })
 
-//2.创建Provider，类似vue的provider
-//这里的Provider本质上是一个组件
+//2.创建一个容器，用于挂载值
 export class ToggleProvider extends React.Component{
 
     //因为箭头函数的特点之一就是不绑定新的this
@@ -45,6 +43,6 @@ export class ToggleProvider extends React.Component{
 
 
 
-//3.创建consumer
+//3.导出消费者，可以直接消费
 export const ToggleConsumer = ToggleContext.Consumer;
 

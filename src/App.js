@@ -3,7 +3,7 @@ import './App.css';
 import styled from "@emotion/styled"
 import { css} from '@emotion/react'
 import Row from "./Row" 
-
+import { useContext } from 'react';
 //=====PS1:redux====
 //然后就是通过reducer拿到state，以及怎么使用dispatch了
 //从provider到useSelector到useDispatch,这些方法我们都从react-redux中拿
@@ -26,6 +26,8 @@ import {
   ToggleConsumer
 } from "./context/ToggleContext"
 
+import NumberProvider from './context/NumberProvider';
+import Context from './context/NumberProvider/context';
 
 //和emotion配套使用,外置参数
 const color = 'red'
@@ -98,6 +100,13 @@ function App() {
         <Switcher></Switcher>
       </ToggleProvider>
 
+      <NumberProvider> 
+
+        <ContextContainer />
+
+      </NumberProvider>
+
+
 
       {/* =====PS3:thunk===== */}
       <h2>thunk</h2>
@@ -135,7 +144,24 @@ function App() {
   );
 }
 
+const ContextContainer = (props)=>{
 
+  const context = useContext(Context)
+
+  return (
+    <div> 
+      <p>{context.number}</p>
+      <p>
+        <button onClick={()=>{
+          //值的更改
+          context.changeNumber(120)
+        }}>
+          更改上述值
+        </button> 
+      </p>
+    </div>
+  )
+}
 const Switcher = () => {
   return (
     /* 
