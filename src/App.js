@@ -47,14 +47,21 @@ const Container = styled.div`
 const HeaderLeft = styled(Row)``;
 
 
-const RefUse = ()=>{
+const RefUse = (props)=>{
 
   /* 
     1.useRef返回一个可变的ref对象,并通过.current取值
   */
   const initRef = React.useRef(true);
-  // console.log("-----",initRef.current);
-
+  React.useEffect(()=>{
+    if(initRef.current){
+      console.log("init");
+      //由true变为false
+      initRef.current = false;
+    }else{
+      console.log("update 操作");
+    }
+  },[props.title])
 
   /*
     2.挂载dom
@@ -63,7 +70,7 @@ const RefUse = ()=>{
 
   const onButtonClick = ()=>{
     inputEl.current.focus();
-    console.log(inputEl.current.value)
+    console.log("input value",inputEl.current.value)
   }
   return(
     <div> 
@@ -147,7 +154,7 @@ function App() {
 
       <h2> -----useRef----- </h2>
 
-      <RefUse />
+      <RefUse title="123" />
 
       <h2>-----Emotion-----</h2>
       {/* emotion */}
