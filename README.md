@@ -1,5 +1,5 @@
 ## qc-redux-context
-redux 、context、ref 、request and proxy
+redux 、context、ref 、request and proxy  
 平时用frer作状态管理比较多，redux最近可能要用到，复习写一下    
 
 
