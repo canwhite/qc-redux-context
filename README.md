@@ -1,5 +1,5 @@
 ## qc-redux-context
-redux + axios and proxy + redux-thunk + context    
+redux 、context、ref 、request and proxy  
 平时用frer作状态管理比较多，redux最近可能要用到，复习写一下    
 
 
@@ -10,7 +10,8 @@ redux + axios and proxy + redux-thunk + context
 * 简单的全局状态可能会使用Context,Provider注入、Consumer消费
 * redux相关在src/redux
 * context相关在src/context
-* 具体使用是在App.js，
+* 具体使用是在App.js
+* ref相关在也App.js
 * App.js还添加了emotion的使用
 
 
