@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
 //1.引入context
-import context from "./context";//从当前文件夹导入context
+import {createContext} from "react";
 import {useState} from "react"
+
+//Context
+export const Context = createContext();
 
 
 //2.提供一层容器
 //3.todo，使用useContext消费
-const NumberProvider = (props)=>{
+export const NumberProvider = (props)=>{
 
     const changeNumber = function(number){
         setState({number:number});
@@ -19,18 +22,15 @@ const NumberProvider = (props)=>{
 
     const [state, setState] = useState(initData);
 
-
-
-
     return(   
-        <context.Provider value={state}>
+        <Context.Provider value={state}>
             <div> 
                 {props.children}
             </div>
-        </context.Provider>
+        </Context.Provider>
     )
 }
-export default NumberProvider;
+
 
 
 

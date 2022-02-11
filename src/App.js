@@ -26,8 +26,7 @@ import {
   ToggleConsumer
 } from "./context/ToggleContext"
 
-import NumberProvider from './context/NumberProvider';
-import Context from './context/NumberProvider/context';
+import {NumberProvider,Context} from './context/NumberProvider';
 
 //和emotion配套使用,外置参数
 const color = 'red'
@@ -79,7 +78,6 @@ const RefUse = (props)=>{
       <p><button onClick={onButtonClick}>Focus the input</button> </p>
     </div>
   )
-
 
 }
 
@@ -177,15 +175,6 @@ function App() {
       <HeaderLeft gap={1}> 
         emotion通用组件
       </HeaderLeft>
-
-
-
-
-
-
-
-
-
 
     </div>
   );
