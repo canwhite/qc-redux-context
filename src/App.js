@@ -148,6 +148,10 @@ function App() {
         <ContextContainer />
       </NumberProvider>
 
+      <NumberProvider> 
+        <TestContainer /> 
+      </NumberProvider>
+
 
 
       <h2> -----useRef----- </h2>
@@ -213,5 +217,18 @@ const ContextContainer = (props)=>{
   )
 }
 
+//如果是兄弟provider，一个改变的话，另外一个里边的值是不是也改变了
+//验证得出，对兄弟组件没有影响，so，
+const TestContainer = (props)=>{
+  const context = useContext(Context)
+  return (
+    <div> 
+      {/* 我只是想看一下值是否改变了 */}
+      <p>--上边更改，对兄弟provider会有影响吗--</p>
+      <p>{context.number}</p>
+      <p>--result: 对兄弟没有影响，所以要放在root组件里，全局可用</p>
+    </div>
+  )
+}
 
 export default App;
